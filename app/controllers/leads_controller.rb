@@ -1,10 +1,10 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :update, :destroy]
 
+
   # GET /leads
   def index
     @leads = Lead.all
-
     render json: @leads
   end
 
