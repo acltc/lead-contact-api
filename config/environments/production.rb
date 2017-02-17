@@ -49,7 +49,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "lead-contact-api_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  # config.action_mailer.default_url_options = { host: "demo-raw-thrills.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name => ENV["SENDGRID_USERNAME"],
