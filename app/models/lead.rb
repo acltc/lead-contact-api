@@ -1,6 +1,5 @@
 class Lead < ApplicationRecord
-  # after_create :send_text
-  after_create :send_first_email
+  after_create :send_text, :send_first_email
 
   def send_text
     account_sid = ENV['TWILIO_ACCOUNT_SID']

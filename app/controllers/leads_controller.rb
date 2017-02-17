@@ -1,7 +1,6 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :update, :destroy]
 
-
   # GET /leads
   def index
     @leads = Lead.all
@@ -39,13 +38,14 @@ class LeadsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lead
-      @lead = Lead.find(params[:id])
-    end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lead
+    @lead = Lead.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def lead_params
-      params.require(:lead).permit(:name, :phone, :email, :city, :state, :zip)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def lead_params
+    params.require(:lead).permit(:name, :phone, :email, :city, :state, :zip)
+  end
 end
