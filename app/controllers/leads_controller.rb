@@ -18,6 +18,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
 
     if @lead.save
+      LeadContactMailer.first_message(@lead).deliver
       render json: @lead, status: :created, location: @lead
     else
       render json: @lead.errors, status: :unprocessable_entity
