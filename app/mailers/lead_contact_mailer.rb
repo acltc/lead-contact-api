@@ -1,5 +1,5 @@
 class LeadContactMailer < ApplicationMailer
-  default from: 'nikkiveen@gmail.com'
+  default from: 'nikki@actualize.co'
 
   def first_message(lead)
     @lead = lead
